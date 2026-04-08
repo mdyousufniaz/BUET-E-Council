@@ -16,7 +16,7 @@ const routes = [
     children: [
       {
         path: '',
-        redirect: '/profile'
+        redirect: '/meetings'
       },
       {
         path: 'profile',
@@ -28,6 +28,12 @@ const routes = [
         path: 'meetings',
         name: 'Meetings',
         component: () => import('../views/MeetingsView.vue'),
+        meta: { requiresAuth: true }
+      },
+            {
+        path: 'participants',
+        name: 'Participants',
+        component: () => import('../views/ParticipantsView.vue'),
         meta: { requiresAuth: true }
       },
       {
